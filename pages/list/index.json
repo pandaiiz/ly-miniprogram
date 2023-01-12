@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "教师简介",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-sidebar": "@vant/weapp/sidebar/index",
+    "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index"
+  }
+}

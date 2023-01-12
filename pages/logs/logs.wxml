@@ -1,0 +1,51 @@
+<!--logs.wxml-->
+<!-- <view class="container log-list">
+  <block wx:for="{{logs}}" wx:key="timeStamp" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log.date}}</text>
+  </block>
+</view> -->
+<van-toast id="van-toast" />
+
+<view style="padding: 20rpx">
+
+  您需要什么老师
+  <van-radio-group value="{{ radio }}" bind:change="onChange">
+    <van-cell-group>
+      <van-cell title="A.专职老师（每小时350-2000元）" clickable data-name="1" bind:click="onClick">
+        <van-radio slot="right-icon" name="1" />
+      </van-cell>
+      <van-cell title="B.在校大学生（每小时150-200元）" clickable data-name="2" bind:click="onClick">
+        <van-radio slot="right-icon" name="2" />
+      </van-cell>
+    </van-cell-group>
+  </van-radio-group>
+
+  <view style="margin: 10rpx">
+  目前年级
+  <van-radio-group value="{{ radio1 }}" bind:change="onChange">
+    <van-cell-group>
+      <van-cell title="A.高一" clickable data-name="1" bind:click="onClick">
+        <van-radio slot="right-icon" name="1" />
+      </van-cell>
+      <van-cell title="B.高二" clickable data-name="2" bind:click="onClick">
+        <van-radio slot="right-icon" name="2" />
+      </van-cell>
+      <van-cell title="B.高三" clickable data-name="2" bind:click="onClick">
+        <van-radio slot="right-icon" name="2" />
+      </van-cell>
+    </van-cell-group>
+  </van-radio-group>
+</view>
+
+  <van-cell-group>
+    <van-field value="{{ username }}" clearable label="上课时间" icon="question-o" placeholder="请输入上课时间" bind:click-icon="onClickIcon" />
+    <van-field value="{{ username }}" clearable label="电话" icon="question-o" placeholder="请输入电话" bind:click-icon="onClickIcon" />
+  </van-cell-group>
+
+  <van-goods-action>
+    <!-- <van-goods-action-icon icon="chat-o" text="客服" bind:click="onClickIcon" /> -->
+    <!-- <van-goods-action-icon icon="cart-o" text="购物车" bind:click="onClickIcon" /> -->
+    <!-- <van-goods-action-button text="加入购物车" type="warning" bind:click="onClickButton" /> -->
+    <van-goods-action-button text="提交" bind:click="onClickButton" />
+  </van-goods-action>
+</view>

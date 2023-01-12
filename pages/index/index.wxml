@@ -1,0 +1,110 @@
+<!--index.wxml-->
+<view style="padding-bottom: 44rpx; background-color: #fafafa;">
+  <van-dropdown-menu>
+    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+  </van-dropdown-menu>
+  <view>
+    <van-card tag="好评如潮！" price="666" title="章北海" bindtap="jumpToList">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="价格实惠！" price="222" title="里哈哈">
+      <view slot="desc">
+        <view>阿斯蒂芬撒地方水电费水电费</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+
+    <van-card tag="好评如潮！" price="666" title="章北海">
+      <view slot="desc">
+        <view>清华大学博士后，精通八国语言，8年家教经验</view>
+        <view>精通科目：语文、数学、英语</view>
+      </view>
+      <view slot="footer">
+        <van-rate value="{{ star }}" allow-half void-icon="star" void-color="#eee" />
+      </view>
+    </van-card>
+  </view>
+  <view wx:if="{{isIos}}" style="position: fixed; bottom: 0; height: 44rpx; background-color: #fafafa; width: 100%;"></view>
+</view>
