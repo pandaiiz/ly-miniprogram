@@ -32,7 +32,7 @@
     "packNpmRelationList": [
       {
         "packageJsonPath": "./package.json",
-        "miniprogramNpmDistDir": "./miniprogram/"
+        "miniprogramNpmDistDir": "./"
       }
     ],
     "minifyWXSS": true,
@@ -46,7 +46,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.4",
-  "appid": "wxccb4ef5f6ac00e2a",
+  "appid": "wxe387d83af1f77abf",
   "projectname": "miniprogram-92",
   "condition": {},
   "editorSetting": {

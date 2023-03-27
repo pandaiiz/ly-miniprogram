@@ -1,10 +1,12 @@
 // index.js
 // 获取应用实例
 import Toast from '@vant/weapp/toast/toast';
+import {getRequest} from '../api/request'
 const app = getApp()
 
 Page({
   data: {
+    dataList: [],
     isIos: false,
     option1: [
       { text: '全部区域', value: 11 },
@@ -56,13 +58,22 @@ Page({
       icon: 'none',
     });
   },
-  jumpToList() {
+  jumpToList(e) {
+    const {customer: customerId} = e.currentTarget.dataset
     wx.navigateTo({
-      url: '../list/index'
+      url: `../list/index?id=${customerId}`
     })
   },
 
   onLoad() {
+    getRequest('user/list', {page:1,pageSize:100}).then(res => {
+      const {list} = res.data
+      this.setData({
+        dataList: list
+      })
+    })
+
+
     if (wx.getUserProfile) {
       this.setData({
         canIUseGetUserProfile: true

@@ -1,8 +1,12 @@
+import {getRequest} from '../api/request'
+
 // pages/list/index.js
 Page({
   data: {
     activeKey: 0,
     isIos: false,
+    userInfo: "",
+    platform: ""
   },
   onClickIcon() {
     Toast('点击图标');
@@ -20,11 +24,22 @@ Page({
 
   },
 
+  getTeacherData(id) {
+    const that = this
+    getRequest('user/userInfo', {id}).then(res => {
+      that.setData({ userInfo:  res.data })
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+
+    this.getTeacherData(options.id)
+
     const {platform} = wx.getSystemInfoSync()
+    this.setData({platform})
     if (platform === 'ios') this.setData({ isIos: true })
     else this.setData({ isIos: false })
   },
