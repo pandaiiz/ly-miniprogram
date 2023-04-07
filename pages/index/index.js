@@ -1,41 +1,94 @@
 // index.js
 // 获取应用实例
 import Toast from '@vant/weapp/toast/toast';
-import {getRequest} from '../api/request'
+import {
+  getRequest
+} from '../api/request'
 const app = getApp()
 
 Page({
   data: {
     dataList: [],
     isIos: false,
-    option1: [
-      { text: '全部区域', value: 11 },
-      { text: '龙岗区', value: 0 },
-      { text: '龙华区', value: 1 },
-      { text: '福田区', value: 2 },
-      { text: '南山区', value: 3 },
-      { text: '罗湖区', value: 4 },
-      { text: '盐田区', value: 5 },
-      { text: '宝安区', value: 6 },
+    areaOptions: [{
+      text: '全部区域',
+      value: ''
+    },
+    {
+      text: '龙岗区',
+      value: '龙岗区'
+    },
+    {
+      text: '龙华区',
+      value: '龙华区'
+    },
+    {
+      text: '福田区',
+      value: '福田区'
+    },
+    {
+      text: '南山区',
+      value: '南山区'
+    },
+    {
+      text: '罗湖区',
+      value: '罗湖区'
+    },
+    {
+      text: '盐田区',
+      value: '盐田区'
+    },
+    {
+      text: '宝安区',
+      value: '宝安区'
+    },
     ],
-    option2: [
-      { text: '全部科目', value: 'all' },
-      { text: '语文', value: 'a' },
-      { text: '数学', value: 'b' },
-      { text: '英语', value: 'c' },
-      { text: '政治', value: 'd' },
-      { text: '历史', value: 'e' },
-      { text: '地理', value: 'f' },
-      { text: '物理', value: 'g' },
-      { text: '化学', value: 'h' },
-      { text: '生物', value: 'i' },
+    subjectOptions: [{
+      text: '全部科目',
+      value: ''
+    },
+    {
+      text: '语文',
+      value: '语文'
+    },
+    {
+      text: '数学',
+      value: '数学'
+    },
+    {
+      text: '英语',
+      value: '英语'
+    },
+    {
+      text: '政治',
+      value: '政治'
+    },
+    {
+      text: '历史',
+      value: '历史'
+    },
+    {
+      text: '地理',
+      value: '地理'
+    },
+    {
+      text: '物理',
+      value: '物理'
+    },
+    {
+      text: '化学',
+      value: '化学'
+    },
+    {
+      text: '生物',
+      value: '生物'
+    },
     ],
-    value1: 11,
-    value2: 'all',
-    star: 4.5,
-    columns: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
+    // imgPrefix: 'http://localhost:5000',
+    imgPrefix: 'https://www.lyjiajiao.cn',
+    areaOption: '',
+    subjectOption: '',
     active: 1,
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -48,26 +101,52 @@ Page({
       url: '../logs/logs'
     })
   },
-  onChange1(event) {
-    const { picker, value, index } = event.detail;
-    Toast(`当前值：${value}, 当前索引：${index}`);
+  areaChange(event) {
+    getRequest('/api/user/list', {
+      page: 1,
+      pageSize: 100,
+      area: event.detail
+    }).then(res => {
+      const {
+        list
+      } = res.data
+      this.setData({
+        dataList: list
+      })
+    });
   },
-  onChange(event) {
-    wx.showToast({
-      title: `切换到标签 ${event.detail.name}`,
-      icon: 'none',
+  subjectChange(event) {
+
+    getRequest('/api/user/list', {
+      page: 1,
+      pageSize: 100,
+      subject: event.detail
+    }).then(res => {
+      const {
+        list
+      } = res.data
+      this.setData({
+        dataList: list
+      })
     });
   },
   jumpToList(e) {
-    const {customer: customerId} = e.currentTarget.dataset
+    const {
+      customer: customerId
+    } = e.currentTarget.dataset
     wx.navigateTo({
       url: `../list/index?id=${customerId}`
     })
   },
 
   onLoad() {
-    getRequest('user/list', {page:1,pageSize:100}).then(res => {
-      const {list} = res.data
+    getRequest('/api/user/list', {
+      page: 1,
+      pageSize: 100
+    }).then(res => {
+      const {
+        list
+      } = res.data
       this.setData({
         dataList: list
       })
@@ -80,11 +159,17 @@ Page({
       })
     }
 
-    
-    const {platform} = wx.getSystemInfoSync()
-    if (platform === 'ios') this.setData({ isIos: true })
-    else this.setData({ isIos: false })
-    
+
+    const {
+      platform
+    } = wx.getSystemInfoSync()
+    if (platform === 'ios') this.setData({
+      isIos: true
+    })
+    else this.setData({
+      isIos: false
+    })
+
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗

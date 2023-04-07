@@ -1,22 +1,27 @@
 <!--pages/list/index.wxml-->
 <view style="padding: 20rpx;">
   <view style="text-align: center;">
-    <van-image width="200" height="200" src="https://img.yzcdn.cn/vant/cat.jpeg" />
-
-<!-- {{platform}} -->
+    <van-image width="200" height="200" src="{{imgPrefix + userInfo.avatar}}" />
     <view>姓名：{{userInfo.nickname}}</view>
     <view>熟悉科目：{{userInfo.subject}}</view>
     <view>最高学历：{{userInfo.academicDegree}}</view>
     <view>毕业院校：{{userInfo.school}}</view>
     <view>课时费：{{userInfo.price}}元/节</view>
     <view>接受区域：{{userInfo.area}}</view>
-    <view style="text-align: left; margin-top: 100rpx; margin-bottom: 144rpx;">
-    {{userInfo.detailIntroduction}}
+    <view style="padding: 1vw;text-align: left; margin-top: 100rpx; margin-bottom: 144rpx;display: flex; justify-content: space-around;text-align: center;">
+      <view wx:for="{{userInfo.classTime}}" wx:for-item="item" wx:key="{{item.title}}">
+      <view style="margin-bottom: 20rpx;">{{item.title}}</view>
+        <view style="width: 14vw;margin-bottom: 10rpx;font-size: 20rpx;" wx:for="{{item.time}}" wx:for-item="timeItem" wx:for-index="timeIndex" wx:key="{{timeIndex}}">
+        {{timeItem.start}}
+        <view>~</view>
+        {{timeItem.end}}</view>
+      </view>
+    <!-- {{userInfo.detailIntroduction}} -->
     </view>
 
   </view>
   <view style="position: fixed; bottom: 0; width: calc(100% - 40rpx); padding: 20rpx 0; background-color: white;">
-    <van-button round type="danger" bind:click="onClickButton" block>选择他</van-button>
+    <!-- <van-button round type="danger" bind:click="onClickButton" block>选择他</van-button> -->
     <view wx:if="{{ isIos }}" style="height: 24rpx;"></view>
   </view>
 </view>

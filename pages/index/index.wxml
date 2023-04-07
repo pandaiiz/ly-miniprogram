@@ -1,17 +1,20 @@
 <!--index.wxml-->
 <view style="padding-bottom: 44rpx; background-color: #fafafa;">
   <van-dropdown-menu>
-    <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-    <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+    <van-dropdown-item value="{{ areaOption }}" options="{{ areaOptions }}" bind:change="areaChange"/>
+    <van-dropdown-item value="{{ subjectOption }}" options="{{ subjectOptions }}"  bind:change="subjectChange"/>
   </van-dropdown-menu>
   <view>
-    <van-card tag="{{item.tag[0]}}!" price="{{item.price}}" title="{{item.nickname}}" bindtap="jumpToList" wx:for="{{dataList}}"  wx:key="id" wx:for-item="item" data-customer="{{item.id}}">
+    <van-card thumb="{{item.avatar ? imgPrefix + item.avatar : ''}}" tag="{{item.tag && item.tag.length > 0 ? item.tag[0] : ''}}" price="{{item.price}}" title="{{item.nickname}}" bindtap="jumpToList" wx:for="{{dataList}}"  wx:key="id" wx:for-item="item" data-customer="{{item.id}}">
+      
       <view slot="desc">
+        {{imgPrefix + item.avatar}}
         <view>{{item.briefIntroduction}}</view>
-        <view>精通科目：{{item.subject}}</view>
+        <view>科目：{{item.subject}}</view>
+        <view>区域：{{item.area}}</view>
       </view>
       <view slot="footer">
-        <van-rate value="{{ item.grade }}" allow-half void-icon="star" void-color="#eee" />
+        <van-rate value="{{ item.grade }}" allow-half void-icon="star" void-color="#eee" disabled color="#ffd21e"/>
       </view>
     </van-card>
   </view>

@@ -6,7 +6,9 @@ Page({
     activeKey: 0,
     isIos: false,
     userInfo: "",
-    platform: ""
+    platform: "",
+    imgPrefix: '',
+    // imgPrefix: 'https://www.lyjiajiao.cn',
   },
   onClickIcon() {
     Toast('点击图标');
@@ -26,7 +28,7 @@ Page({
 
   getTeacherData(id) {
     const that = this
-    getRequest('user/userInfo', {id}).then(res => {
+    getRequest('/api/user/userInfo', {id}).then(res => {
       that.setData({ userInfo:  res.data })
     })
   },
@@ -36,6 +38,8 @@ Page({
    */
   onLoad(options) {
 
+    // this.setData({imgPrefix: 'http://localhost:5000'})
+    this.setData({imgPrefix: 'https://www.lyjiajiao.cn'})
     this.getTeacherData(options.id)
 
     const {platform} = wx.getSystemInfoSync()
