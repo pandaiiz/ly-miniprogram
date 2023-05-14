@@ -1,0 +1,41 @@
+<view style="display: flex; padding: 0 50rpx;">
+  <van-image width="80" height="80" src="{{imgPrefix + userInfo.avatar}}" />
+  <view style="line-height: 100rpx; margin-left: 40rpx; font-size: 60rpx;">{{userInfo.nickname}}</view>
+  <view style="line-height: 100rpx; ">
+    <view style="margin-left: 20rpx;background-color: gold; height: 50rpx; line-height: 50rpx;margin-top: 20rpx; padding: 0 5rpx; border-radius: 10rpx;">金牌教师</view>
+  </view>
+</view>
+
+<view style="margin-top: 100rpx;">
+  <van-row>
+    <van-col span="8" style="text-align: center;">
+      <view>接单数</view>
+      <view style="font-size: 40rpx;margin-top: 20rpx">
+        <text style="color: green;">55</text>/<text style="color: red;">100</text>
+      </view>
+    </van-col>
+    <van-col span="8" style="text-align: center;">
+      <view>课时数</view>
+      <view style="font-size: 40rpx;margin-top: 20rpx">
+        <text style="color: green;">234</text>/<text style="color: red;">455</text>
+      </view>
+    </van-col>
+    <van-col span="8" style="text-align: center;">
+      <view>待结佣（元）</view>
+      <view style="font-size: 40rpx;margin-top: 20rpx">
+        23456
+      </view>
+    </van-col>
+  </van-row>
+</view>
+<view style="margin-top: 100rpx;">
+
+  <van-cell-group>
+    <van-cell title="角色" value="{{userInfo.role}}" />
+    <!-- <van-cell title="姓名" value="{{userInfo.nickname}}" /> -->
+    <van-cell title="手机号" value="{{userInfo.mobile}}" />
+    <van-cell title="关于荔园" is-link />
+    <van-cell title="解绑微信" is-link />
+  </van-cell-group>
+</view>
+<!-- <button bindtap="syncWechatInfo">同步昵称、头像</button> -->

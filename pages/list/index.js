@@ -1,4 +1,4 @@
-import {getRequest} from '../api/request'
+import {getRequest} from '../../utils/request'
 
 // pages/list/index.js
 Page({
@@ -9,6 +9,9 @@ Page({
     platform: "",
     imgPrefix: '',
     // imgPrefix: 'https://www.lyjiajiao.cn',
+  },
+  onShow() {
+    this.getTabBar().init()
   },
   onClickIcon() {
     Toast('点击图标');

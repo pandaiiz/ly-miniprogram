@@ -1,0 +1,8 @@
+/* pages/login/index.wxss */
+.login-container {
+  height: 100%;
+  /* background-color: red; */
+}
+.login-form {
+  /* padding: 10vw; */
+}

@@ -1,6 +1,3 @@
-// index.js
-// 获取应用实例
-import Toast from '../statistics/node_modules/@vant/weapp/toast/toast';
 import {
   getRequest
 } from '../../utils/request'

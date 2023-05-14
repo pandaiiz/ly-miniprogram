@@ -1,0 +1,15 @@
+<view class="login-container">
+<view style="text-align: center;margin: 50rpx;">{{ message }}</view>
+
+  <view class="login-form">
+    <van-cell-group>
+      <van-field value="{{ mobile }}" label="手机号" placeholder="请输入手机号" bind:change="mobileChange"/>
+      <van-field value="{{ password }}" label="密码" type="password" placeholder="请输入密码" bind:change="passwordChange"/>
+    </van-cell-group>
+  </view>
+  <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button> -->
+  <view style="padding: 10rpx;">
+    <van-button type="primary" block bindtap="bindAccount">绑定</van-button>
+  </view>
+
+</view>

@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "主页",
+  "navigationBarTitleText": "教师列表",
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-grid": "@vant/weapp/grid/index",

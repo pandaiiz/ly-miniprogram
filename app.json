@@ -1,9 +1,32 @@
 {
   "pages":[
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/list/index"
+    "pages/my/index",
+    "pages/login/index",
+    "pages/class/index",
+    "pages/statistics/index",
+    "pages/teacher/index"
   ],
+  "tabBar": {
+		"custom": true,
+		"color": "#000000",
+		"selectedColor": "#000000",
+		"backgroundColor": "#000000",
+		"list": [
+			{
+				"pagePath": "pages/my/index"
+			},
+			{
+				"pagePath": "pages/class/index"
+			},
+			{
+				"pagePath": "pages/statistics/index"
+			},
+			{
+				"pagePath": "pages/teacher/index"
+			}
+		]
+	},
+  "usingComponents": {},
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
